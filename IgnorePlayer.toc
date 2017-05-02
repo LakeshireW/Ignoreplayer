@@ -1,0 +1,7 @@
+﻿## Interface:11200
+## Title: IgnorePlayer
+## Title-zhCN: 智能屏蔽
+## Notes: Ignore player by keyword
+## Notes-zhCN: 使你能使用关键字在聊天频道屏蔽讨厌的人或不良语言，并自动回复
+## SavedVariables: KeywordIgnore
+IgnorePlayer.xml

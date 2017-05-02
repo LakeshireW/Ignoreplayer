@@ -1,0 +1,570 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="localization.lua"/>
+	<Script file="IgnorePlayer.lua"/>
+	<Button name="KeywordIgnoreFrameKeywordIgnoreButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="298" y="16"/>
+		</Size>
+		<Frames>
+			<Frame name="$parentButtonText" setAllPoints="true">
+				<Layers>
+					<Layer level="BORDER">
+						<FontString name="$parentName" inherits="GameFontNormal">
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="10" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>
+				KeywordIgnoreFrameKeywordIgnoreButton_OnClick();
+				PlaySound("igMainMenuOptionCheckBoxOn");
+			</OnClick>
+		</Scripts>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+	</Button>
+	<Frame name="KeywordIgnoreFrame" toplevel="true" parent="UIParent" movable="true" enableMouse="true" hidden="true">
+		<Size>
+			<AbsDimension x="384" y="512"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="0" y="-104"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<HitRectInsets>
+			<AbsInset left="0" right="30" top="0" bottom="45"/>
+		</HitRectInsets>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture file="Interface\FriendsFrame\FriendsFrameScrollIcon">
+					<Size>
+						<AbsDimension x="60" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="7" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="KeywordIgnoreFrameTopLeft" file="Interface\PaperDollInfoFrame\UI-Character-General-TopLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="KeywordIgnoreFrameTopRight" file="Interface\PaperDollInfoFrame\UI-Character-General-TopRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="KeywordIgnoreFrameBottomLeft" file="Interface\FriendsFrame\UI-IgnoreFrame-BotLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="KeywordIgnoreFrameBottomRight" file="Interface\FriendsFrame\UI-IgnoreFrame-BotRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="KeywordIgnoreFrameTitleText" inherits="GameFontNormal" text="KEYWORDIGNORE_UI_TEXT1">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="KeywordIgnoreFrameCloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-30" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Frame name="KeywordIgnoreFrameConfigFrame">
+				<Size>
+					<AbsDimension x="270" y="23"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="70" y="-42"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="KeywordIgnoreFrameIgnoreNameFrameRight" file="Interface\ClassTrainerFrame\UI-ClassTrainer-FilterBorder">
+							<Size>
+								<AbsDimension x="12" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOPRIGHT"/>
+							</Anchors>
+							<TexCoords left="0.90625" right="1.0" top="0" bottom="1.0"/>
+						</Texture>
+						<Texture name="KeywordIgnoreFrameIgnoreNameFrameMiddle" file="Interface\ClassTrainerFrame\UI-ClassTrainer-FilterBorder">
+							<Size>
+								<AbsDimension x="246" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="RIGHT" relativeTo="KeywordIgnoreFrameIgnoreNameFrameRight" relativePoint="LEFT"/>
+							</Anchors>
+							<TexCoords left="0.09375" right="0.90625" top="0" bottom="1.0"/>
+						</Texture>
+						<Texture name="KeywordIgnoreFrameIgnoreNameFrameLeft" file="Interface\ClassTrainerFrame\UI-ClassTrainer-FilterBorder">
+							<Size>
+								<AbsDimension x="12" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="RIGHT" relativeTo="KeywordIgnoreFrameIgnoreNameFrameMiddle" relativePoint="LEFT"/>
+							</Anchors>
+							<TexCoords left="0" right="0.09375" top="0" bottom="1.0"/>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<CheckButton name="KeywordIgnoreFrameEnableButton">
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT">
+								<Offset>
+									<AbsDimension x="8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<FontString name="KeywordIgnoreFrameEnableButtonText" inherits="GameFontHighlightSmall" text="KEYWORDIGNORE_UI_TEXT2">
+									<Anchors>
+										<Anchor point="LEFT" relativePoint="RIGHT">
+											<Offset>
+												<AbsDimension x="5" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>
+								if ( this:GetChecked() ) then
+									KeywordIgnore.Config.Enable = 1;
+									PlaySound("igMainMenuOptionCheckBoxOn");
+								else
+									KeywordIgnore.Config.Enable = 0;
+									PlaySound("igMainMenuOptionCheckBoxOff");
+								end
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(KEYWORDIGNORE_UI_TEXT2, 1.0, 1.0, 1.0, KEYWORDIGNORE_UI_TOOLTIP1, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+						<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
+						<PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
+						<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
+						<CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
+						<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
+					</CheckButton>
+					<CheckButton name="KeywordIgnoreFrameIgnoreNameButton">
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="KeywordIgnoreFrameEnableButtonText" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="-1"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<FontString name="KeywordIgnoreFrameIgnoreNameButtonText" inherits="GameFontHighlightSmall" text="KEYWORDIGNORE_UI_TEXT3">
+									<Anchors>
+										<Anchor point="LEFT" relativePoint="RIGHT">
+											<Offset>
+												<AbsDimension x="5" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>
+								if ( this:GetChecked() ) then
+									KeywordIgnore.Config.IgnoreNameOnly = 1;
+									PlaySound("igMainMenuOptionCheckBoxOn");
+								else
+									KeywordIgnore.Config.IgnoreNameOnly = 0;
+									PlaySound("igMainMenuOptionCheckBoxOff");
+								end
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(KEYWORDIGNORE_UI_TEXT3, 1.0, 1.0, 1.0, KEYWORDIGNORE_UI_TOOLTIP2, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+						<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
+						<PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
+						<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
+						<CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
+						<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
+					</CheckButton>
+				</Frames>
+			</Frame>
+			<Frame name="KeywordIgnoreListFrame" hidden="false" setAllPoints="true">
+				<Frames>
+					<Button name="KeywordIgnoreFrameKeywordIgnorePlayerButton" inherits="UIPanelButtonTemplate" text="KEYWORDIGNORE_UI_TEXT4">
+						<Size>
+							<AbsDimension x="131" y="21"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="KeywordIgnoreFrame">
+								<Offset>
+									<AbsDimension x="17" y="81"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								StaticPopup_Show("ADD_KEYWORDIGNORE");
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(KEYWORDIGNORE_UI_TEXT4, 1.0, 1.0, 1.0, KEYWORDIGNORE_UI_TOOLTIP3, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="KeywordIgnoreFrameStopKeywordIgnoreButton" inherits="UIPanelButtonTemplate" text="KEYWORDIGNORE_UI_TEXT5">
+						<Size>
+							<AbsDimension x="131" y="21"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="KeywordIgnoreFrameKeywordIgnorePlayerButton" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="62" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								KeywordIgnoreFrame_UnIgnore();
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(KEYWORDIGNORE_UI_TEXT5, 1.0, 1.0, 1.0, KEYWORDIGNORE_UI_TOOLTIP4, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton1" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="KeywordIgnoreFrame">
+								<Offset>
+									<AbsDimension x="23" y="-80"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton2" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton1" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton3" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton2" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton4" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton3" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton5" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton4" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton6" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton5" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton7" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton6" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton8" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton7" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton9" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton8" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton10" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton9" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton11" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton10" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton12" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton11" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton13" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton12" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton14" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton13" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton15" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton14" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton16" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton15" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton17" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton16" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton18" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton17" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton19" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton18" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="KeywordIgnoreFrameKeywordIgnoreButton20" inherits="KeywordIgnoreFrameKeywordIgnoreButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="KeywordIgnoreFrameKeywordIgnoreButton19" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<ScrollFrame name="KeywordIgnoreFrameKeywordIgnoreScrollFrame" inherits="FauxScrollFrameTemplate">
+						<Size>
+							<AbsDimension x="296" y="330"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="KeywordIgnoreFrame">
+								<Offset>
+									<AbsDimension x="-67" y="-75"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="$parentScrollBarTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size>
+										<AbsDimension x="31" y="256"/>
+									</Size>
+									<Anchors>
+										<Anchor point="TOP" relativeTo="$parentScrollBarScrollUpButton">
+											<Offset>
+												<AbsDimension x="0" y="5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+								</Texture>
+								<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size>
+										<AbsDimension x="31" y="106"/>
+									</Size>
+									<Anchors>
+										<Anchor point="BOTTOM" relativeTo="$parentScrollBarScrollDownButton">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(FRIENDS_FRAME_IGNORE_HEIGHT, KeywordIgnoreList_Update);
+							</OnVerticalScroll>
+						</Scripts>
+					</ScrollFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				KeywordIgnoreFrame_OnLoad();
+			</OnLoad>
+			<OnShow>
+				KeywordIgnoreFrame_OnShow();
+			</OnShow>
+			<OnHide>
+				KeywordIgnoreFrame_OnHide();
+			</OnHide>
+			<OnEvent>
+				KeywordIgnoreFrame_OnEvent();
+			</OnEvent>
+			<OnMouseWheel>
+				return;
+			</OnMouseWheel>
+		</Scripts>
+	</Frame>
+</Ui>

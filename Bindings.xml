@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="IGNOREPLAYER_TOGGLE" header="IGNOREPLAYER_TITLE">
+        ToggleKeywordIgnoreFrame();
+	</Binding>
+</Bindings>

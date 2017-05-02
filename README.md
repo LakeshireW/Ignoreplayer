@@ -24,4 +24,4 @@ here is another emotion message from the infamous gold farmers,but it got filter
 ![](https://i.gyazo.com/6bb9d802614bb6f3abaa9a192da65408.jpg)
 
 
-choose different key words of a message in case it doesn't work. they would change content of advertisements sometimes,so make sure to update the key words yourself once these ads appear again.
+choose different key words of a message in case it doesn't work. they would change the content of advertisements sometimes,so make sure to update the key words yourself once these ads appear again.

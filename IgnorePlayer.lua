@@ -177,7 +177,7 @@ function KeywordIgnore_ChatFrame_OnEvent(event)
 	if ((event == "CHAT_MSG_CHANNEL" or event == "CHAT_MSG_YELL" or event == "CHAT_MSG_SAY" or event == "CHAT_MSG_TEXT_EMOTE" or event == "CHAT_MSG_EMOTE") and KeywordIgnore.Config.Enable == 1) then
 		local KeywordIgnore_msg = arg1;
 		local KeywordIgnore_player = arg2;
-		if (KeywordIgnore_msg ~= nil ) then
+		if (KeywordIgnore_msg ~= nil or KeywordIgnore_player ~= nil or KeywordIgnore_player~=UnitName("player")) then
 			if (KeywordIgnore_Check(KeywordIgnore_player,KeywordIgnore_msg)) then
 				return;
 			end
